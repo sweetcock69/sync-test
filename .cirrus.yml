@@ -1,0 +1,10 @@
+task:
+    name: ROM1
+    timeout_in: 220m
+    container:
+      image: inok2341/anu:latest
+      cpu: 8
+      memory: 32G
+
+    build_script:
+      - bash build_rom
