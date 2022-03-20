@@ -3,7 +3,7 @@ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
 chmod a+rx ~/.bin/repo
 cd ~/arrow
 
-~/.bin/repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 12.x
+~/.bin/repo init --depth=1 -u https://github.com/AospExtended/manifest.git -b 12.x
 mkdir -p .repo/local_manifests
 curl https://raw.githubusercontent.com/sweetcock69/local_manifest/aex/local_manifest.xml -o .repo/local_manifests/local_manifest.xml
 ~/.bin/repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
