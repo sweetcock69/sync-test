@@ -5,7 +5,7 @@ cd ~/arrow
 
 ~/.bin/repo init --depth=1 -u https://github.com/PixelExperience/manifest -b twelve
 mkdir -p .repo/local_manifests
-curl https://raw.githubusercontent.com/sweetcock69/local_manifest/aex/local_manifest.xml -o .repo/local_manifests/local_manifest.xml
+curl https://raw.githubusercontent.com/sweetcock69/local_manifest/arrow/local_manifest.xml -o .repo/local_manifests/local_manifest.xml
 ~/.bin/repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 printf 'umask = 421' >> ~/ccache/ccache.conf
