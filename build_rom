@@ -17,7 +17,7 @@ export CCACHE_DIR=~/ccache
 export CCACHE_EXEC=$(command -v ccache)
 export USE_CCACHE=1
 export BUILD_USERNAME=sweetcock69
-export BUILD_HOSTNAME=sweetcock69
+export BUILD_HOSTNAME=sweetcock6
 export TZ=America/Los_Angeles
 croot
 mka bacon -j$(nproc --all)
