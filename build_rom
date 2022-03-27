@@ -4,8 +4,6 @@ chmod a+rx ~/.bin/repo
 cd ~/arrow
 
 ~/.bin/repo init --depth=1 -u https://github.com/PixelExperience/manifest -b twelve
-mkdir -p .repo/local_manifests
-curl https://raw.githubusercontent.com/sweetcock69/local_manifest/arrow/local_manifest.xml -o .repo/local_manifests/local_manifest.xml
 ~/.bin/repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 printf 'umask = 421' >> ~/ccache/ccache.conf
@@ -14,10 +12,11 @@ ccache -M 9G
 . build/envsetup.sh
 lunch aosp_X00TD-userdebug
 export CCACHE_DIR=~/ccache
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export CCACHE_EXEC=$(command -v ccache)
 export USE_CCACHE=1
 export BUILD_USERNAME=sweetcock69
-export BUILD_HOSTNAME=sweetcock6
+export BUILD_HOSTNAME=sweetcock69
 export TZ=America/Los_Angeles
 croot
 mka bacon -j$(nproc --all)
