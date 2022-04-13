@@ -21,13 +21,13 @@ mkdir -p $PARENT_DIR/$KERNEL_DIR/$CODENAME 2>/dev/null;
 
 # Clone Toolchain Source
 if [ "$CLANG" == "true" ]; then
-  git clone https://github.com/TheHitMan7/clang.git -b master $PARENT_DIR/$KERNEL_DIR/clang 2>/dev/null
+  git clone --depth=1 https://github.com/TheHitMan7/clang.git -b master $PARENT_DIR/$KERNEL_DIR/clang 2>/dev/null
 fi
 if [ "$GCC64" == "true" ]; then
-  git clone https://github.com/TheHitMan7/aarch64-maestro-linux-android.git -b master $PARENT_DIR/$KERNEL_DIR/aarch64-maestro-linux-android 2>/dev/null
+  git clone --depth=1 https://github.com/TheHitMan7/aarch64-maestro-linux-android.git -b master $PARENT_DIR/$KERNEL_DIR/aarch64-maestro-linux-android 2>/dev/null
 fi
 if [ "$GCC32" == "true" ]; then
-  git clone https://github.com/TheHitMan7/arm-maestro-linux-gnueabi.git -b master $PARENT_DIR/$KERNEL_DIR/arm-maestro-linux-gnueabi 2>/dev/null
+  git clone --depth=1 https://github.com/TheHitMan7/arm-maestro-linux-gnueabi.git -b master $PARENT_DIR/$KERNEL_DIR/arm-maestro-linux-gnueabi 2>/dev/null
 fi
 
 # Check Kernel Source
@@ -35,7 +35,7 @@ fi
 
 # Clone Kernel Source
 if [ "$KTREE" == "true" ]; then
-  git clone https://github.com/Vivekachooz/android_kernel_asus_sdm660.git -b hackneyed $SOURCE 2>/dev/null;
+  git clone --depth=1 https://github.com/Vivekachooz/android_kernel_asus_sdm660.git -b hackneyed $SOURCE 2>/dev/null;
 fi
 
 # Check AnyKernel Source
@@ -43,7 +43,7 @@ fi
 
 # Clone AnyKernel Source
 if [ "$ANYKERNEL" == "true" ]; then
-  git clone https://github.com/TheHitMan7/AnyKernel3.git -b master $PARENT_DIR/$KERNEL_DIR/AnyKernel3 2>/dev/null;
+  git clone --depth=1 https://github.com/TheHitMan7/AnyKernel3.git -b master $PARENT_DIR/$KERNEL_DIR/AnyKernel3 2>/dev/null;
 fi
 
 # Set Toolchain Source
