@@ -7,7 +7,7 @@
 # Set Initials
 PARENT_DIR=$(pwd)
 KERNEL_DIR="kernel"
-CODENAME="ginkgo"
+CODENAME="X00TD"
 SOURCE=$PARENT_DIR/$KERNEL_DIR/$CODENAME
 OUT=$PARENT_DIR/$KERNEL_DIR/out
 
@@ -35,7 +35,7 @@ fi
 
 # Clone Kernel Source
 if [ "$KTREE" == "true" ]; then
-  git clone https://github.com/TheHitMan7/android_kernel_sm6125.git -b linux-4.14.y $SOURCE 2>/dev/null;
+  git clone https://github.com/Vivekachooz/android_kernel_asus_sdm660.git -b hackneyed $SOURCE 2>/dev/null;
 fi
 
 # Check AnyKernel Source
@@ -65,7 +65,7 @@ if [ "$1" == "mk" ]; then
   export KBUILD_BUILD_USER=TheHitMan
   export KBUILD_BUILD_HOST=ILLYRIA
   export KBUILD_COMPILER_STRING="$(${CC} --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')"
-  make O=$OUT ARCH=arm64 vendor/ginkgo-perf_defconfig
+  make O=$OUT ARCH=arm64 X00TD_defconfig
   make O=$OUT ARCH=arm64 CC="$CC" CLANG_TRIPLE="$CLANG_TRIPLE" CROSS_COMPILE="$CROSS_COMPILE" CROSS_COMPILE_ARM32="$CROSS_COMPILE_ARM32" -j$(nproc --all)
 fi
 
